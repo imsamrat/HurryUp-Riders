@@ -12,6 +12,7 @@ import Login from './components/Header/Login/Login';
 import Home from './components/Header/Home/Home';
 import Destination from './components/Header/Destination/Destination';
 import NotFound from './components/NotFound/NotFound';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -26,24 +27,18 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/destination">
-            <Destination></Destination>
-          </Route>
-          {/* <PrivateRoute path="/destination">
-            <Destination></Destination>
-          </PrivateRoute> */}
           <Route path="/login">
             <Login></Login>
           </Route>
-          {/* <PrivateRoute path="/shipment">
-            <Shipment></Shipment>
-          </PrivateRoute> */}
           <Route exact path="/">
             <Home></Home>
           </Route>
-          {/* <Route path="/product/:productKey">
-            <ProductDetail></ProductDetail>
-          </Route> */}
+          <PrivateRoute path="/destination">
+            <Destination></Destination>
+          </PrivateRoute>
+          <PrivateRoute path="/destination/:details">
+            <Destination></Destination>
+          </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>
           </Route>

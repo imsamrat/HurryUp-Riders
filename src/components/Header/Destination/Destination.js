@@ -1,7 +1,11 @@
 import { Button } from 'react-bootstrap';
 import React from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Destination = () => {
+    const {details} = useParams();
+    console.log(details);
     return (
         <div>
             <div className="container px-4">
@@ -14,6 +18,7 @@ const Destination = () => {
                             <input type="text" />
                             <br/>
                             <Button variant="danger">Search</Button>
+                            
                         </div>
                     </div>
                     <div className="col">
