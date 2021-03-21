@@ -2,23 +2,39 @@ import { Button } from 'react-bootstrap';
 import React from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import FakeData from '../FakeData/data.json';
+import './Destination.css';
+import ManIcon from '../../../images/peopleicon.png'
 
 const Destination = () => {
     const {details} = useParams();
-    console.log(details);
+    const newData = FakeData.find(element=> element.id == details);
+    const {image, name, price } = newData;
     return (
         <div>
             <div className="container px-4">
                 <div className="row gx-5">
                     <div className="col">
-                        <div className="p-3 border bg-light">
-                            <p>Pick From</p>
-                            <input type="text" />
-                            <p>Pick To</p>
-                            <input type="text" />
-                            <br/>
-                            <Button variant="danger">Search</Button>
-                            
+                        <div className="p-3 border bg-light d-flex search-details">
+                            <img className="image-info" src={image} alt=""/>
+                            <h5 className="name-info">{name}</h5>
+                            <img className="image-info" src={ManIcon} alt=""/>
+                            <p>1</p>
+                            <p className="price-info">{price} Taka</p>
+                        </div>
+                        <div className="p-3 border bg-light d-flex search-details">
+                            <img className="image-info" src={image} alt=""/>
+                            <h5 className="name-info">{name}</h5>
+                            <img className="image-info" src={ManIcon} alt=""/>
+                            <p>1</p>
+                            <p className="price-info">{price} Taka</p>
+                        </div>
+                        <div className="p-3 border bg-light d-flex search-details">
+                            <img className="image-info" src={image} alt=""/>
+                            <h5 className="name-info">{name}</h5>
+                            <img className="image-info" src={ManIcon} alt=""/>
+                            <p>1</p>
+                            <p className="price-info">{price} Taka</p>
                         </div>
                     </div>
                     <div className="col">

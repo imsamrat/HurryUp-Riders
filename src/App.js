@@ -13,6 +13,7 @@ import Home from './components/Header/Home/Home';
 import Destination from './components/Header/Destination/Destination';
 import NotFound from './components/NotFound/NotFound';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import SearchInfo from './components/SearchInfo/SearchInfo';
 
 export const UserContext = createContext();
 
@@ -20,7 +21,7 @@ function App() {
   const[loggedInUser, setLoggedInUser] = useState({});
   return (
   <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-    <p>Name: {loggedInUser.name}</p>
+    {/* <p>Name: {loggedInUser.name}</p> */}
     <Router>
         <Header></Header>
         <Switch>
@@ -33,10 +34,13 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/destination">
-            <Destination></Destination>
+          <PrivateRoute path="/search/:details">
+            <SearchInfo></SearchInfo>
           </PrivateRoute>
           <PrivateRoute path="/destination/:details">
+            <Destination></Destination>
+          </PrivateRoute>
+          <PrivateRoute path="/destination">
             <Destination></Destination>
           </PrivateRoute>
           <Route path="*">

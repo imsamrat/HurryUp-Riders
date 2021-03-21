@@ -8,11 +8,11 @@ const Header = () => {
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand to="/home">Hurry Up Riders</Navbar.Brand>
             <Nav className="mr-auto nav-link">
-                <Link to="/home">Home</Link>
-                <Link to="/destination">Destination</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/login">Login</Link>
+                <Link to="/home" className="nav-title">Home</Link>
+                <Link to="/destination" className="nav-title">Destination</Link>
+                <Link to="/blog" className="nav-title">Blog</Link>
+                <Link to="/contact" className="nav-title">Contact</Link>
+                <Link to="/login" className="nav-title">Login</Link>
             </Nav>
         </Navbar>
     );

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import FakeData from '../FakeData/data.json';
 import Transport from '../Transport/Transport';
-import Bg from '../../../images/Bg.png'
-import { Image } from 'react-bootstrap';
+import Bg from '../../../images/Bg.png';
+import './Home.css';
 
 const Home = () => {
     const [transport, setTransport] = useState([]);
@@ -10,21 +10,15 @@ const Home = () => {
         setTransport(FakeData);
     },[])
     return (
-        <div className="home-banner">
+        <div className="home-banner" style={{backgroundImage:`url(${Bg})`}}>
             <div>
-                <Image src={Bg} fluid/>
-                <div  className= "row banner-title">
+                <div className= "row">
                     {
                     transport.map(transport => <Transport transport={transport}></Transport>)
                     }
                 </div>
                 
             </div>
-            {/* <div className= "row banner-title">
-            {
-                transport.map(transport => <Transport transport={transport}></Transport>)
-            }
-            </div> */}
         </div>
         
     );

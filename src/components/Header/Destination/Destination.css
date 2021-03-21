@@ -1,0 +1,10 @@
+.image-info{
+    width: 50px !important;
+    height: 40px !important;
+}
+.name-info{
+    margin-left: 20px; 
+}
+.price-info{
+    margin-left: 50px;
+}
